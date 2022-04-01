@@ -1,0 +1,73 @@
+{% extends "base.html" %} 
+
+{% block content %}
+    <div class="row">
+        <div class="col-8">
+            <h4 class="text-center alert alert-primary">Add new Country</h4>
+            {% if messages %}
+                {% for message in messages %}
+                    <div class="alert alert-success alert-dismissible fade show" role="alert">
+                        {{ message }}
+                        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                {% endfor %}
+            {% endif %}
+            <form action="" method="post">
+                {% csrf_token %}
+                <label for="name">Name</label><br>
+                <input type="text" id="name" name="name" value="{{ data.name }}" required><br>
+                <label for="code">Code</label><br>
+                <input type="text" id="code" name="code" value="{{ data.code }}" required><br><br>
+                <input type="submit" value="Submit">
+              </form> 
+             
+              
+        </div>
+         <div class="col-4">
+            
+         </div>
+        </div>
+        <div class="col-12">
+            <h3 class="text-center alert-primary alert">Filter Record Like This
+                <form class="add_your_class"  action="{% url 'country:country_home' %}" >
+                    <input  id="search" name="search"type="search" name="search"> 
+                    <button  type="submit"> Search </button>
+                </form>
+            </h3>
+            
+                  <table class="table table-hover">
+                      <thead>
+                          <tr>
+                            <th scope="col">#ID.</th>
+                            <th scope="col">Name</th>
+                            <th scope="col">CODE</th>
+                            <th scope="col">CREATED_AT</th>
+                           
+                          </tr>
+                      </thead>
+                      <tbody>
+                       
+                        {% for country in countries %}
+                          <tr>
+                              
+                              <td>{{ country.id }}</td>
+                              <td>{{ country.name }}</td>
+                              <td>{{ country.code }}</td>
+                              <td>{{ country.created_at }}</td>
+                              <td>  <a href="{% url 'country:detail' country.id %}" class="btn btn-sm btn-info">Details</a></td>
+                              <td>  <a href="{% url 'country:edit_detail' country.id %}" class="btn btn-sm btn-info">Edit</a></td>
+                              <td>  <a href="{% url 'country:delete_country' country.id %}" class="btn btn-sm btn-info">Delete</a></td>
+
+
+                          </tr>
+                {% endfor %}
+                      </tbody>
+
+                  </table>
+           
+          
+        </div>
+    </div>
+{% endblock content %}

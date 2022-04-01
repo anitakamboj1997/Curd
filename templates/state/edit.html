@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <div class="row">
+        <div class="col-md-6">
+            <h4 class="text-center alert alert-primary">Country detail Update Here</h4>
+            <form action="" method="post">
+                {% csrf_token %}
+                <label for="name">Name</label><br>
+                <input type="text" id="name" name="name" value="{{ state_detail.name }}"><br>
+                <label for="code">Code</label><br>
+                <input type="text" id="code" name="code" value="{{ state_detail.code }}"><br><br>
+                <input type="submit" value="Submit">
+              </form> 
+        </div>
+    </div>
+{% endblock %}

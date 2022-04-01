@@ -1,0 +1,37 @@
+
+{% extends "base.html" %} 
+
+{% block content %}
+    <div class="row">
+      
+            <div class="col-8">
+         
+                {% if messages %}
+                    {% for message in messages %}
+                        <div class="alert alert-success alert-dismissible fade show" role="alert">
+                            {{ message }}
+                            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                    {% endfor %}
+                {% endif %}
+                </div>
+                </div>
+        <form action="" style="border:1px solid #ccc" method="post">
+            {% csrf_token %}
+            <div class="container">
+              <h1>Login</h1>
+              {% csrf_token %}
+            
+              <label for="email"><b>Email</b></label>
+              <input type="email" placeholder="Enter Email" name="email_address" id ="email_address" required>
+              <label for="psw"><b>Password</b></label>
+              <input type="password" placeholder="Enter Password" name="password" id ="password" required>
+              <button type="submit" class="cancelbtn">Login</button>
+                <button type="button" class="signupbtn">Sign Up</button>
+              </div>
+            </div>
+          </form>
+    </div>
+{% endblock content %}

@@ -1,0 +1,36 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="row">
+    <div class="col-sm-8">
+        <h3 class="text-center alert-primary alert">Filter Record Like This</h3>
+
+        <table class="table table-hover">
+            <thead>
+                <tr>
+                    <th scope="col">#ID.</th>
+                    <th scope="col">COUNTRY</th>
+                    <th scope="col">Name</th>
+                    <th scope="col">CODE</th>
+                    <th scope="col">CREATED_AT</th>
+                    <th scope="col">UPDATED_AT</th>
+
+                </tr>
+            </thead>
+            <tbody>
+               
+                <tr>
+                    <td>{{ state_detail.id }}</td>
+                    <td>{{ state_detail.country.name }}</td>
+                    <td>{{ state_detail.name }}</td>
+                    <td>{{ state_detail.code }}</td>
+                    <td>{{ state_detail.created_at }}</td>
+                    <td>{{ state_detail.updated_at }}</td>
+                </tr>
+               
+            </tbody>
+        </table>
+
+    </div>
+</div>
+{% endblock content %}

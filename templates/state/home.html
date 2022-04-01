@@ -1,0 +1,100 @@
+{% extends "base.html" %} 
+
+{% block content %}
+    <div class="row">
+        <div class="col-8">
+            <h4 class="text-center alert alert-primary">Add new state</h4>
+            {% if messages %}
+                {% for message in messages %}
+                    <div class="alert alert-success alert-dismissible fade show" role="alert">
+                        {{ message }}
+                        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                {% endfor %}
+            {% endif %}
+            <form action="" method="post">
+                {% csrf_token %}
+                <label for="name">Name</label><br>
+                <input type="text" id="name" name="name" value="{{ states.name }}" required><br>
+                <label for="code">Code</label><br>
+                <input type="text" id="code" name="code" value="{{ states.code }}" required><br><br>
+               
+                <!-- <input type="text" id="item_id" name="item_id" value="{{ data.country }}"><br><br> -->
+                <select name="item_id"  id="item_id">
+                    {% for entry in countries %}
+                        <option value="{{ entry.id }}">{{ entry.name }}</option>
+                    {% endfor %}
+                </select>
+                <input type="submit" value="Submit">
+              </form> 
+             
+              
+        </div>
+        <div class="col-4">
+            <form class="add_your_class"  action="{% url 'state:state_home' %}" >
+                <input  id="search" name="search"type="search" name="search"> 
+                <button  type="submit"> Search State</button>
+            </form>
+            
+         </div>
+        </div>
+       
+         
+        <div class="col-12">
+            <h3 class="text-center alert-primary alert">Filter Record Like This
+                
+            </h3>
+            <h4><form class="add_your_class"  action="{% url 'state:state_home' %}" >
+              
+                <select name="country_search"  id="country_search">
+                    {% for entry in countries %}
+                        <option value="{{ entry.id }}">{{ entry.name }}</option>
+                    {% endfor %}
+                </select>
+                <button  type="submit"> Search Country</button>
+            </form></h4>
+            {% if states %}
+                  <table class="table table-hover">
+                      <thead>
+                          <tr>
+                            <th scope="col">#ID.</th>
+                            <th scope="col">COUNTRY</th>
+                            <th scope="col">NAME</th>
+                            <th scope="col">CODE</th>
+                            <th scope="col">CREATED_AT</th>
+                           
+                          </tr>
+                      </thead>
+                      <tbody>
+                        {% for data in states %}
+                          <tr>
+                              <td>{{ data.id }}</td>
+                              <td>{{ data.country.name}}</td>
+                              <td>{{ data.name }}</td>
+                              <td>{{ data.code }}</td>
+                              <td>{{ data.created_at }}</td>
+                              
+                             
+                              <td>  <a href="{% url 'state:delete_state' data.id %}" class="btn btn-sm btn-info">Delete</a></td>
+                              <td>  <a href="{% url 'state:edit_state_details' data.id %}" class="btn btn-sm btn-info">Edit</a></td>
+                              <td>  <a href="{% url 'state:state_detail' data.id %}" class="btn btn-sm btn-info">Details</a></td>
+
+
+
+                             
+
+                          </tr>
+                {% endfor %}
+                      </tbody>
+
+                  </table>
+            {% else %}
+                <h4 class="alert alert-danger text-center">No Records</h4>
+
+            {% endif %}
+        </div>
+    </div>
+    </div>
+{% endblock content %}
