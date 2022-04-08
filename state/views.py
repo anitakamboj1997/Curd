@@ -22,6 +22,7 @@ def class_view_decorator(function_decorator):
         return View
 
     return simple_decorator
+    
 @class_view_decorator(login_required)  
 class StatePageView(View):
     def get(self,request):
@@ -48,8 +49,7 @@ class StatePageView(View):
         data=State(name=state_name,code=state_code,country=country_name)
         print(data,"get")
         try:
-            if state_name and state_code and country_name:
-
+            if state_name and  state_code and country_name:
                 data.save()
                 messages.success(request, 'Created!!')
             else:
@@ -58,6 +58,7 @@ class StatePageView(View):
         except:
              messages.warning(request, 'Alreday exits')
         return redirect('state:state_home')
+
 @class_view_decorator(login_required)          
 class StateDeleteView(View):
     def get(self,request,id):
@@ -67,6 +68,7 @@ class StateDeleteView(View):
         state_detail.save()
         messages.warning(request, 'Successfully Deleted')
         return HttpResponseRedirect('/state/state_home/')
+
 @class_view_decorator(login_required)          
 class StateEditView(View):
     def get(self,request,id):
@@ -83,6 +85,7 @@ class StateEditView(View):
         state_detail.code = state_code
         state_detail.save()
         return redirect('state:state_home')
+        
 @class_view_decorator(login_required)          
 class StateDeltailView(View):
     def get(self,request,id):

@@ -1,6 +1,8 @@
 from django.contrib import admin
 from django.urls import path
 from .views import CityPageView,CityDeltailView,CityEditView,CityDeleteView
+
+
 app_name='city'
 urlpatterns = [
     path('city_home/', CityPageView.as_view(),name='city_home'),

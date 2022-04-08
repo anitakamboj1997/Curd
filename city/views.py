@@ -23,14 +23,16 @@ def class_view_decorator(function_decorator):
         return View
 
     return simple_decorator
+
+    
 @class_view_decorator(login_required) 
 class CityPageView(View):
     def get(self,request):
         states = State.objects.filter(is_deleted=False)
-        countries=Country.objects.filter(is_deleted=False)
+        countries = Country.objects.filter(is_deleted=False)
         query = self.request.GET.get('search')
         state_serach = self.request.GET.get('state_search')
-        country_search=self.request.GET.get('country_search')
+        country_search = self.request.GET.get('country_search')
         print(country_search)
         print(state_serach,"fjkjnfgn")
         if query:
@@ -56,7 +58,6 @@ class CityPageView(View):
             print(data,"get")
             try:
                 if state_name and city_name and city_code:
-
                     data.save()
                     messages.success(request, 'Created!!')
                 else:
@@ -65,12 +66,16 @@ class CityPageView(View):
             except:
                 messages.warning(request, 'Alreday exits')
             return redirect('city:city_home')
+
+
 @class_view_decorator(login_required) 
 class CityDeltailView(View):
     def get(self,request,id):
         city_detail = City.objects.get(pk=id)
         print(city_detail,"hi")
         return render(request,'city/details.html',{'city_detail':city_detail})
+
+
 @class_view_decorator(login_required)         
 class CityEditView(View):
     def get(self,request,id):
@@ -85,6 +90,8 @@ class CityEditView(View):
         city_detail.code=city_code
         city_detail.save()
         return redirect('city:city_home')
+
+
 @class_view_decorator(login_required)         
 class CityDeleteView(View):
     def get(self,request,id):

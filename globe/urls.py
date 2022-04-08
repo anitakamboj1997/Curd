@@ -25,5 +25,6 @@ urlpatterns = [
     path(r'state/',include('state.urls'), name='state'),
     path(r'city/',include('city.urls'), name='city'),
     path(r'users/',include('users.urls'), name='users'),
+    path(r'backendapp/',include('backendApp.urls'), name='backendapp'),
    
 ]

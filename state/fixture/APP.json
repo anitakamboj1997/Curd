@@ -1,0 +1,254 @@
+[
+{
+    "model": "state.state",
+    "pk": 1,
+    "fields": {
+        "country": 1,
+        "name": "india",
+        "code": "aasdsd",
+        "created_at": "2022-04-05T12:44:55.326Z",
+        "updated_at": null,
+        "is_deleted": true,
+        "created_by": 1,
+        "updated_by": null
+    }
+},
+{
+    "model": "state.state",
+    "pk": 2,
+    "fields": {
+        "country": 1,
+        "name": "punjab",
+        "code": "aasdsd",
+        "created_at": "2022-04-05T12:45:57.544Z",
+        "updated_at": null,
+        "is_deleted": false,
+        "created_by": 1,
+        "updated_by": null
+    }
+},
+{
+    "model": "state.state",
+    "pk": 3,
+    "fields": {
+        "country": 1,
+        "name": "raj",
+        "code": "1212",
+        "created_at": "2022-04-05T12:46:45.092Z",
+        "updated_at": null,
+        "is_deleted": false,
+        "created_by": 1,
+        "updated_by": null
+    }
+},
+{
+    "model": "state.state",
+    "pk": 4,
+    "fields": {
+        "country": 1,
+        "name": "rajdf",
+        "code": "aasdsd",
+        "created_at": "2022-04-05T12:47:52.560Z",
+        "updated_at": null,
+        "is_deleted": false,
+        "created_by": 1,
+        "updated_by": null
+    }
+},
+{
+    "model": "state.state",
+    "pk": 5,
+    "fields": {
+        "country": 1,
+        "name": "rajdffdf",
+        "code": "aasdsd",
+        "created_at": "2022-04-05T12:48:26.507Z",
+        "updated_at": null,
+        "is_deleted": false,
+        "created_by": 1,
+        "updated_by": null
+    }
+},
+{
+    "model": "state.state",
+    "pk": 6,
+    "fields": {
+        "country": 1,
+        "name": "rajdffdfsds",
+        "code": "aasdsd",
+        "created_at": "2022-04-05T12:49:30.892Z",
+        "updated_at": null,
+        "is_deleted": false,
+        "created_by": 1,
+        "updated_by": null
+    }
+},
+{
+    "model": "state.state",
+    "pk": 7,
+    "fields": {
+        "country": 1,
+        "name": "rajdffdfsdssd",
+        "code": "aasdsd",
+        "created_at": "2022-04-05T12:49:49.478Z",
+        "updated_at": null,
+        "is_deleted": false,
+        "created_by": 1,
+        "updated_by": null
+    }
+},
+{
+    "model": "state.state",
+    "pk": 8,
+    "fields": {
+        "country": 1,
+        "name": "har",
+        "code": "aasdsd",
+        "created_at": "2022-04-05T12:50:17.720Z",
+        "updated_at": null,
+        "is_deleted": false,
+        "created_by": 1,
+        "updated_by": null
+    }
+},
+{
+    "model": "state.state",
+    "pk": 9,
+    "fields": {
+        "country": 1,
+        "name": "harya",
+        "code": "aasdsd",
+        "created_at": "2022-04-05T12:50:50.124Z",
+        "updated_at": null,
+        "is_deleted": false,
+        "created_by": 1,
+        "updated_by": null
+    }
+},
+{
+    "model": "state.state",
+    "pk": 10,
+    "fields": {
+        "country": 1,
+        "name": "haryaas",
+        "code": "aasdsd",
+        "created_at": "2022-04-05T12:51:08.623Z",
+        "updated_at": null,
+        "is_deleted": false,
+        "created_by": 1,
+        "updated_by": null
+    }
+},
+{
+    "model": "state.state",
+    "pk": 11,
+    "fields": {
+        "country": 1,
+        "name": "haryaassds",
+        "code": "aasdsd",
+        "created_at": "2022-04-05T12:51:55.710Z",
+        "updated_at": null,
+        "is_deleted": false,
+        "created_by": 1,
+        "updated_by": null
+    }
+},
+{
+    "model": "state.state",
+    "pk": 12,
+    "fields": {
+        "country": 2,
+        "name": "haryaassdsfgf",
+        "code": "aasdsd",
+        "created_at": "2022-04-05T12:52:11.464Z",
+        "updated_at": null,
+        "is_deleted": false,
+        "created_by": 1,
+        "updated_by": null
+    }
+},
+{
+    "model": "state.state",
+    "pk": 13,
+    "fields": {
+        "country": 3,
+        "name": "df",
+        "code": "aasdsd",
+        "created_at": "2022-04-05T12:52:21.954Z",
+        "updated_at": null,
+        "is_deleted": false,
+        "created_by": 1,
+        "updated_by": null
+    }
+},
+{
+    "model": "state.state",
+    "pk": 14,
+    "fields": {
+        "country": 3,
+        "name": "dfdsfd",
+        "code": "aasdsd",
+        "created_at": "2022-04-05T12:52:45.891Z",
+        "updated_at": null,
+        "is_deleted": false,
+        "created_by": 1,
+        "updated_by": null
+    }
+},
+{
+    "model": "state.state",
+    "pk": 15,
+    "fields": {
+        "country": 3,
+        "name": "dfdsfdds",
+        "code": "aasdsd",
+        "created_at": "2022-04-05T12:53:19.437Z",
+        "updated_at": null,
+        "is_deleted": false,
+        "created_by": 1,
+        "updated_by": null
+    }
+},
+{
+    "model": "state.state",
+    "pk": 16,
+    "fields": {
+        "country": 1,
+        "name": "dfdfd",
+        "code": "ghgfh",
+        "created_at": "2022-04-05T12:59:09.941Z",
+        "updated_at": null,
+        "is_deleted": false,
+        "created_by": 1,
+        "updated_by": null
+    }
+},
+{
+    "model": "state.state",
+    "pk": 17,
+    "fields": {
+        "country": 1,
+        "name": "dfdfdyu",
+        "code": "ghgfh",
+        "created_at": "2022-04-05T13:31:03.770Z",
+        "updated_at": null,
+        "is_deleted": false,
+        "created_by": 1,
+        "updated_by": null
+    }
+},
+{
+    "model": "state.state",
+    "pk": 18,
+    "fields": {
+        "country": 1,
+        "name": "dfdfdyudfdf",
+        "code": "ghgfh",
+        "created_at": "2022-04-05T13:31:39.503Z",
+        "updated_at": null,
+        "is_deleted": false,
+        "created_by": 1,
+        "updated_by": null
+    }
+}
+]

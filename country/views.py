@@ -7,20 +7,14 @@ from django.utils.decorators import method_decorator
 from django.contrib.auth.decorators import login_required
 
 
-
 def class_view_decorator(function_decorator):
-    """Convert a function based decorator into a class based decorator usable
-    on class based Views.
-
-    Can't subclass the `View` as it breaks inheritance (super in particular),
-    so we monkey-patch instead.
-    """
-
     def simple_decorator(View):
         View.dispatch = method_decorator(function_decorator)(View.dispatch)
         return View
 
     return simple_decorator
+
+
 @class_view_decorator(login_required)    
 class HomePageView(View):
     def get(self,request):
@@ -32,12 +26,14 @@ class HomePageView(View):
         else:
              countries = Country.objects.filter(is_deleted=False)
         return render(request,'country/home.html',locals())
-    def post(self,request):
         
+    def post(self,request):
         country_name = request.POST.get('name')
         print(country_name)
         country_code = request.POST.get('code')
-        data = Country(name=country_name,code=country_code)
+        created_by=request.user
+        print(created_by)
+        data = Country(name=country_name,code=country_code,created_by=created_by)
         print(data,"sdksdksdsldls")
         try:
             if country_name and country_code:
@@ -50,12 +46,15 @@ class HomePageView(View):
             
         return redirect('country:country_home')
 
+
 @class_view_decorator(login_required)
 class DeltailView(View):
     def get(self,request,id):
         Country_detail = Country.objects.get(pk=id)
         print(Country_detail,"hi")
         return render(request,'country/details.html',locals())
+
+
 @class_view_decorator(login_required)        
 class EditView(View):
     def get(self,request,id):
@@ -69,7 +68,7 @@ class EditView(View):
         Country_detail.name = country_name
         Country_detail.code = country_code
         Country_detail.save()
-        return HttpResponseRedirect('country:country_home/')
+        return redirect('country:country_home')
 
 @class_view_decorator(login_required)
 class DeleteView(View):
@@ -79,6 +78,6 @@ class DeleteView(View):
         Country_detail.is_deleted = True
         Country_detail.save()
         messages.warning(request, 'Successfully Deleted')
-        return HttpResponseRedirect('country:country_home/')
+        return redirect('country:country_home')
 
         
